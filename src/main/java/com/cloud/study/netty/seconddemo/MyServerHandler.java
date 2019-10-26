@@ -12,7 +12,7 @@ public class MyServerHandler extends SimpleChannelInboundHandler<String> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) {
-        System.out.println(ctx.channel().remoteAddress() + " to server:" + msg);
-        ctx.channel().writeAndFlush("From server: " + UUID.randomUUID());
+        System.out.println(ctx.channel().remoteAddress() + msg);
+        ctx.channel().writeAndFlush("from server: " + UUID.randomUUID());
     }
 }

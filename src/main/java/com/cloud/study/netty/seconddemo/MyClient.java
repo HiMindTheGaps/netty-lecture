@@ -32,8 +32,8 @@ public class MyClient {
                     pipeline.addLast(new SimpleChannelInboundHandler<String>() {
                         @Override
                         protected void channelRead0(ChannelHandlerContext ctx, String msg) {
-                            System.out.println(ctx.channel().remoteAddress() + "from server: " + msg);
-                            ctx.writeAndFlush(LocalDateTime.now());
+                            System.out.println(ctx.channel().remoteAddress() + msg);
+                            ctx.writeAndFlush("from client : " + LocalDateTime.now());
                         }
 
                         @Override
