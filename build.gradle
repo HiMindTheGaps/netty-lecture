@@ -13,5 +13,11 @@ repositories {
 
 dependencies {
     compile("io.netty:netty-all:4.1.42.Final")
+    compile("org.apache.commons:commons-lang3:3.9")
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
 
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
