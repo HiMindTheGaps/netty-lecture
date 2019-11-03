@@ -1,4 +1,4 @@
-package com.cloud.study.netty.chatdemo;
+package com.cloud.study.netty.heartbeatdemo;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -36,7 +36,7 @@ public class MyChatClient {
                     pipeline.addLast(new MyChatClientHandler());
                 }
             });
-            Channel channel = bootstrap.connect("localhost", 10012).sync().channel();
+            Channel channel = bootstrap.connect("localhost", 10010).sync().channel();
             BufferedReader bufferedReadear = new BufferedReader(new InputStreamReader(System.in, "utf8"));
             for (; ; ) {
                 String s = bufferedReadear.readLine();
